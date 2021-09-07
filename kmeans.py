@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-class KMeans(object):
+class KMeans_py(object):
 
     def __init__(self, k, start_var, end_var, num_observations, data):
         """Class constructor for KMeans
@@ -89,7 +89,7 @@ class KMeans(object):
             # print("---")
 
             for j in range(len(self.centroids)):
-                distances[j] = (KMeans.get_euclidean_distance(self,sliced_data,self.centroids.iloc[j]))
+                distances[j] = (self.get_euclidean_distance(sliced_data,self.centroids.iloc[j]))
 
             # print("Dist:")
             # print (distances)
@@ -258,7 +258,6 @@ class KMeans(object):
             self.centroids = centroids
 
             i += 1
-            print('Iteration', i)
 
         print('Done clustering!')
         return cur_groups
